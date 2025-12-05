@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="description"
+    content="We make you stand out with awesome newsletters, polished profiles, killer video edits, and top-notch ghostwriting." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#a44f30" />
+  <title>Wavelance | Premium Personal Branding</title>
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+  <!-- Slick Carousel -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
+
+  <!-- AOS Animation -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.ico/favicon-32x32.png" />
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header>
+    <img src="images/wavelance-logo.png" alt="Wavelance" class="logo" />
+
+    <nav class="nav-links">
+      <a href="#home">HOME</a>
+      <a href="#services">SERVICES</a>
+      <a href="#results">RESULTS</a>
+      <a href="#about">ABOUT</a>
+    </nav>
+
+    <div class="head-cta">
+      <button class="btn btn-secondary" onclick="scrollToDiscovery()">Get Started</button>
+    </div>
+
+    <div class="hamburger" onclick="toggleMenu()">
+      <i class="fa fa-bars"></i>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="close-menu" onclick="toggleMenu()">&times;</div>
+    <a href="#home" onclick="toggleMenu()">HOME</a>
+    <a href="#services" onclick="toggleMenu()">SERVICES</a>
+    <a href="#results" onclick="toggleMenu()">RESULTS</a>
+    <a href="#about" onclick="toggleMenu()">ABOUT</a>
+    <button class="btn btn-secondary" onclick="scrollToDiscovery(); toggleMenu()">Get Started</button>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="hero-content" data-aos="fade-up">
+      <h1>
+        <span class="text-gold">Boost</span> Your LinkedIn Game With
+        <span class="text-gold">Wavelance!</span>
+      </h1>
+      <h3>(Skyrocket your brand in 90 DAYS 📈)</h3>
+      <p>
+        We make you stand out with awesome newsletters, polished profiles,
+        killer video edits, and top-notch ghostwriting.
+      </p>
+      <button class="btn btn-primary" onclick="scrollToDiscovery()">Join NOW!</button>
+
+      <!-- Stats Bar -->
+      <div class="hero-stats-bar" data-aos="fade-up" data-aos-delay="200">
+        <div class="stat-item">
+          <h2 id="impressions">145k+</h2>
+          <p>Impressions</p>
+        </div>
+        <div class="stat-item">
+          <h2 id="engagement">9k+</h2>
+          <p>Engagement</p>
+        </div>
+        <div class="stat-item">
+          <h2 id="leads">120+</h2>
+          <p>Leads</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="services" id="services">
+    <div class="section-header" data-aos="fade-up">
+      <h2>Increase Your Brand Visibility With Our <span class="text-gold">Services</span></h2>
+      <p>Enhance your online presence to attract more opportunities and engagement. Risk-free. 24/7 Support.</p>
+    </div>
+
+    <div class="services-grid">
+      <!-- Service 1 -->
+      <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="service-icon">
+          <img src="images/ghostwriting-service.png" alt="Ghostwriting" />
+        </div>
+        <h3>Ghostwriting</h3>
+        <p>We create LinkedIn posts that reflect your professional identity perfectly.</p>
+      </div>
+
+      <!-- Service 2 -->
+      <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="service-icon">
+          <img src="images/profile-optimization-service.png" alt="Profile Optimization" />
+        </div>
+        <h3>Profile Optimization</h3>
+        <p>We optimize your LinkedIn profile to make a strong impression.</p>
+      </div>
+
+      <!-- Service 3 -->
+      <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+        <div class="service-icon">
+          <img src="images/video-editing-service.png" alt="Video Editing" />
+        </div>
+        <h3>Video Editing</h3>
+        <p>We make killer video edits to captivate your audience.</p>
+      </div>
+
+      <!-- Service 4 -->
+      <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+        <div class="service-icon">
+          <img src="images/newsletter-service.png" alt="Newsletter" />
+        </div>
+        <h3>Newsletter Creation</h3>
+        <p>We craft engaging newsletters to keep your LinkedIn audience informed.</p>
+      </div>
+
+      <!-- Service 5 -->
+      <div class="service-card" data-aos="fade-up" data-aos-delay="600">
+        <div class="service-icon">
+          <img src="images/comment-writing-service.png" alt="Comment Writing" />
+        </div>
+        <h3>Comment Writing</h3>
+        <p>Engage with your network effectively through strategic commenting.</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Results Section -->
+  <section class="results" id="results">
+    <div class="results-content" data-aos="fade-up">
+      <h1>
+        <span class="text-primary">TRANSFORM</span> YOUR BRAND IN
+        <span class="text-primary">90 DAYS</span>
+      </h1>
+      <h4>The COCO formula revolutionizes your brand from its core.</h4>
+
+      <!-- COCO Formula Pillars -->
+      <div class="transformation-pillars">
+        <div class="pillar-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="pillar-number">01</div>
+          <h3>Content</h3>
+          <p>Compelling narratives that capture attention and resonate with your target audience. We craft stories that
+            drive engagement and build your brand authority.</p>
+        </div>
+
+        <div class="pillar-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="pillar-number">02</div>
+          <h3>Optimization</h3>
+          <p>Fine-tuned profiles that convert visitors into followers and customers. We optimize every element to
+            maximize your LinkedIn presence and impact.</p>
+        </div>
+
+        <div class="pillar-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="pillar-number">03</div>
+          <h3>Consistency</h3>
+          <p>Regular presence that builds authority and keeps you top-of-mind. Our proven posting schedule ensures
+            sustained visibility and growth.</p>
+        </div>
+
+        <div class="pillar-card" data-aos="fade-up" data-aos-delay="400">
+          <div class="pillar-number">04</div>
+          <h3>Outreach</h3>
+          <p>Strategic networking that generates quality leads and meaningful connections. We help you build
+            relationships that drive real business results.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Numbers Graph Section -->
+  <section class="results" style="background: #000; padding-top: 0;">
+    <div class="results-content" data-aos="fade-up">
+      <h2>Our <span class="text-gold">Numbers</span> Don't Lie</h2>
+    </div>
+    <img src="images/numbers-graph.PNG" alt="Numbers Graph" class="graph-pc" />
+    <img src="images/numbers-graph-mobile.PNG" alt="Numbers Graph Mobile" class="graph-mobile" />
+  </section>
+
+  <!-- Performance Carousel -->
+  <section class="performance">
+    <div class="section-header" data-aos="fade-up">
+      <h2>Real <span class="text-gold">Results</span></h2>
+      <p>See the impact of our content strategies.</p>
+    </div>
+    <div class="carousel-track-performance">
+      <div><img src="images/content-performance-1.jpg" alt="Perf 1"></div>
+      <div><img src="images/content-performance-cropped-1.jpg" alt="Perf 2"></div>
+      <div><img src="images/content-performance-cropped-2.jpg" alt="Perf 3"></div>
+      <div><img src="images/content-performance-cropped-3.jpg" alt="Perf 4"></div>
+      <div><img src="images/content-performance-cropped-4.jpg" alt="Perf 5"></div>
+      <div><img src="images/content-performance-new1.jpg" alt="Perf 6"></div>
+      <div><img src="images/content-performance-new2.jpg" alt="Perf 7"></div>
+      <div><img src="images/content-performance-new3.jpg" alt="Perf 8"></div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="testimonials">
+    <div class="section-header">
+      <h2>What Our <span class="text-gold">Clients</span> Say</h2>
+    </div>
+
+    <div class="testimonials-slider">
+      <!-- Testimonial 1 -->
+      <div class="testimonial-card">
+        <div class="client-info">
+          <img src="images/evgeny-kotelevsky.jpeg" alt="Evgeny">
+          <div class="client-details">
+            <h4>Evgeny Kotelevskiy</h4>
+            <p>Head of Social @Selzy</p>
+          </div>
+        </div>
+        <p class="testimonial-text">
+          "Afreen helped me tremendously with writing LinkedIn comments. She truly understands the platform and knows
+          the requirements for comments that drive engagement. I would definitely recommend her if you need to build
+          more engagement."
+        </p>
+      </div>
+
+      <!-- Testimonial 2 -->
+      <div class="testimonial-card">
+        <div class="client-info">
+          <img src="images/harsh-thakkar.jpeg" alt="Harsh">
+          <div class="client-details">
+            <h4>Harsh Thakkar</h4>
+            <p>CEO @ Qualtivate</p>
+          </div>
+        </div>
+        <p class="testimonial-text">
+          "With Afreen's help, I have been able to understand my LinkedIn analytics and content themes. Using her
+          tips,
+          I got at least 20% more engagements on posts. I recommend connecting with Afreen if you need help with
+          personal branding."
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about" id="about">
+    <div class="about-container">
+      <div class="about-header">
+        <img src="images/afreen.jpeg" alt="Afreen">
+        <h3>My name is Afreen 👋</h3>
+      </div>
+      <div class="about-text">
+        <h4>Hey there, I'm Afreen, the brain behind Wavelance!</h4>
+        <h4>I've always been fascinated by the potential of LinkedIn to propel careers and businesses forward.</h4>
+        <h4>From fine-tuning our COCO Formula to crafting personalized strategies, I'm here to ensure your LinkedIn
+          journey with Wavelance is nothing short of exceptional!</h4>
+      </div>
+      <button class="btn btn-secondary" onclick="scrollToDiscovery()">Join NOW!</button>
+    </div>
+  </section>
+
+  <!-- Discovery Call -->
+  <section class="discovery" id="contact">
+    <div class="discovery-info">
+      <h1>Discovery Call</h1>
+      <p>Ready to unlock the full potential of your LinkedIn profile? Book a Discovery Call with me today!</p>
+
+      <ul class="discovery-list">
+        <li>
+          <i class="fa fa-check-circle text-gold"></i>
+          <span>Assess your current LinkedIn profile and provide personalized optimization recommendations.</span>
+        </li>
+        <li>
+          <i class="fa fa-check-circle text-gold"></i>
+          <span>Review your content strategy and suggest ways to increase engagement and visibility.</span>
+        </li>
+        <li>
+          <i class="fa fa-check-circle text-gold"></i>
+          <span>Identify potential areas for improvement in your LinkedIn networking and engagement tactics.</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="calendly-container">
+      <!-- Calendly inline widget begin -->
+      <div class="calendly-inline-widget" data-url="https://calendly.com/writerafreen/30min"
+        style="min-width:320px;height:700px;"></div>
+      <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+      <!-- Calendly inline widget end -->
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <h2>HAVE A QUESTION?</h2>
+    <div class="footer-socials">
+      <a href="tel:+919328863606" class="fa fa-phone"></a>
+      <a href="https://www.linkedin.com/in/afreen-dharar-%F0%9F%87%B5%F0%9F%87%B8-170126218/"
+        class="fa fa-linkedin"></a>
+      <a href="mailto:writerafreen@gmail.com" class="fa fa-envelope"></a>
+    </div>
+    <br>
+    <button class="btn btn-primary" onclick="scrollToDiscovery()">Contact Us!</button>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+
+  <script>
+    // Initialize AOS
+    AOS.init({
+      duration: 1000,
+      once: true
+    });
+
+    // Smooth Scroll
+    var scroll = new SmoothScroll('a[href*="#"]', {
+      speed: 800
+    });
+
+    // Mobile Menu Toggle
+    function toggleMenu() {
+      document.getElementById('mobileMenu').classList.toggle('active');
+    }
+
+    function scrollToDiscovery() {
+      document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // Performance Carousel
+    $(document).ready(function () {
+      $('.carousel-track-performance').slick({
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 2000,
+        dots: true,
+        responsive: [
+          {
+            breakpoint: 1024,
+            settings: {
+              slidesToShow: 2
+            }
+          },
+          {
+            breakpoint: 600,
+            settings: {
+              slidesToShow: 1,
+              arrows: false
+            }
+          }
+        ]
+      });
+
+      // Testimonials Carousel (Simple Slider)
+      $('.testimonials-slider').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        autoplay: true,
+        dots: true,
+        arrows: false
+      });
+    });
+
+    // Number Animation
+    function animateValue(obj, start, end, duration) {
+      let startTimestamp = null;
+      const step = (timestamp) => {
+        if (!startTimestamp) startTimestamp = timestamp;
+        const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+        obj.innerHTML = Math.floor(progress * (end - start) + start).toLocaleString() + "+";
+        if (progress < 1) {
+          window.requestAnimationFrame(step);
+        }
+      };
+      window.requestAnimationFrame(step);
+    }
+
+    // Trigger animation when stats come into view
+    let animated = false;
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !animated) {
+          animateValue(document.getElementById("impressions"), 0, 500000, 2000);
+          animateValue(document.getElementById("engagement"), 0, 30000, 2000);
+          animateValue(document.getElementById("leads"), 0, 99, 2000);
+          animated = true;
+        }
+      });
+    });
+
+    observer.observe(document.querySelector('.hero-stats-bar'));
+
+  </script>
+</body>
+
+</html>
