@@ -2,6 +2,15 @@
 <html lang="en">
 
 <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-38JW63TT29"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-38JW63TT29');
+  </script>
   <meta charset="UTF-8" />
   <meta name="description"
     content="We make you stand out with awesome newsletters, polished profiles, killer video edits, and top-notch ghostwriting." />
@@ -27,6 +36,8 @@
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="favicon.ico/favicon-32x32.png" />
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 <body>
@@ -192,12 +203,42 @@
   </section>
 
   <!-- Numbers Graph Section -->
-  <section class="results" style="background: #000; padding-top: 0;">
+  <section class="results" style="background: #000; padding-top: 6rem;">
     <div class="results-content" data-aos="fade-up">
       <h2>Our <span class="text-gold">Numbers</span> Don't Lie</h2>
     </div>
-    <img src="images/numbers-graph.PNG" alt="Numbers Graph" class="graph-pc" />
-    <img src="images/numbers-graph-mobile.PNG" alt="Numbers Graph Mobile" class="graph-mobile" />
+    <!-- Real Dashboard Implementation -->
+    <div class="dashboard-container" data-aos="fade-up">
+      <!-- Top Cards -->
+      <div class="dashboard-cards">
+        <div class="stat-card">
+          <h4>Impressions</h4>
+          <div class="stat-number text-gold">145k+</div>
+        </div>
+        <div class="stat-card">
+          <h4>Engagement</h4>
+          <div class="stat-number text-gold">9k+</div>
+        </div>
+        <div class="stat-card">
+          <h4>Leads</h4>
+          <div class="stat-number text-gold">120+</div>
+        </div>
+      </div>
+
+      <!-- Graph -->
+      <div class="chart-wrapper">
+        <div class="chart-header">
+          <h3>Performance Trend</h3>
+          <div class="chart-legend">
+            <span class="legend-item"><span class="dot gold"></span> Impressions</span>
+            <span class="legend-item"><span class="dot copper"></span> Engagement</span>
+          </div>
+        </div>
+        <div class="chart-container">
+          <canvas id="performanceChart"></canvas>
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- Performance Carousel -->
@@ -412,7 +453,124 @@
 
     observer.observe(document.querySelector('.hero-stats-bar'));
 
+
+    // Chart.js Performance Graph
+    const ctx = document.getElementById('performanceChart').getContext('2d');
+
+    // Gradients
+    const gradientGold = ctx.createLinearGradient(0, 0, 0, 400);
+    gradientGold.addColorStop(0, 'rgba(251, 187, 72, 0.5)'); // Gold
+    gradientGold.addColorStop(1, 'rgba(251, 187, 72, 0.0)');
+
+    const gradientCopper = ctx.createLinearGradient(0, 0, 0, 400);
+    gradientCopper.addColorStop(0, 'rgba(164, 79, 48, 0.5)'); // Copper/Primary
+    gradientCopper.addColorStop(1, 'rgba(164, 79, 48, 0.0)');
+
+    const performanceChart = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: ['Oct 1', 'Oct 8', 'Oct 15', 'Oct 22', 'Oct 29', 'Nov 5', 'Nov 12', 'Nov 19', 'Nov 26', 'Dec 3'],
+        datasets: [{
+          label: 'Impressions',
+          data: [12000, 25000, 45000, 68000, 95000, 110000, 125000, 138000, 142000, 145000],
+          borderColor: '#fbbb48', // var(--secondary)
+          backgroundColor: gradientGold,
+          borderWidth: 3,
+          tension: 0.4,
+          fill: true,
+          pointBackgroundColor: '#fbbb48',
+          pointBorderColor: '#fff',
+          pointBorderWidth: 2,
+          pointRadius: 4,
+          pointHoverRadius: 6,
+          yAxisID: 'y',
+        }, {
+          label: 'Engagement',
+          data: [800, 1500, 2500, 3800, 5200, 6500, 7200, 8100, 8800, 9200],
+          borderColor: '#a44f30', // var(--primary)
+          backgroundColor: gradientCopper,
+          borderWidth: 3,
+          tension: 0.4,
+          fill: true,
+          pointBackgroundColor: '#a44f30',
+          pointBorderColor: '#fff',
+          pointBorderWidth: 2,
+          pointRadius: 4,
+          pointHoverRadius: 6,
+          yAxisID: 'y1',
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: {
+            display: false // Using custom legend HTML
+          },
+          tooltip: {
+            mode: 'index',
+            intersect: false,
+            backgroundColor: 'rgba(0, 0, 0, 0.8)',
+            titleColor: '#fff',
+            bodyColor: '#ccc',
+            borderColor: 'rgba(255, 255, 255, 0.1)',
+            borderWidth: 1
+          }
+        },
+        scales: {
+          x: {
+            grid: {
+              color: 'rgba(255, 255, 255, 0.05)',
+              drawBorder: false
+            },
+            ticks: {
+              color: '#888'
+            }
+          },
+          y: {
+            type: 'linear',
+            display: true,
+            position: 'left',
+            grid: {
+              color: 'rgba(255, 255, 255, 0.05)',
+              drawBorder: false
+            },
+            ticks: {
+              color: '#fbbb48', // Gold color for Impressions axis
+              callback: function (value) {
+                if (value >= 1000) {
+                  return value / 1000 + 'k';
+                }
+                return value;
+              }
+            }
+          },
+          y1: {
+            type: 'linear',
+            display: true,
+            position: 'right',
+            grid: {
+              drawOnChartArea: false, // only want the grid lines for one axis to show up
+            },
+            ticks: {
+              color: '#a44f30', // Copper color for Engagement axis
+              callback: function (value) {
+                if (value >= 1000) {
+                  return value / 1000 + 'k';
+                }
+                return value;
+              }
+            }
+          }
+        },
+        interaction: {
+          mode: 'nearest',
+          axis: 'x',
+          intersect: false
+        }
+      }
+    });
+
   </script>
-</body>
 
 </html>
